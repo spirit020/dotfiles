@@ -1,0 +1,53 @@
+# 1. Definimos la configuración global de clangd una sola vez
+[language-server.clangd]
+command = "clangd"
+args = ["--fallback-style=LLVM"]
+
+[[language]]
+name = "c"
+formatter = { command = "clang-format", args = ["-style=file"] }
+auto-format = true
+diagnostic-severity = "hint"
+language-servers = [ "clangd" ]
+
+[[language]]
+name = "cpp"
+formatter = { command = "clang-format", args = ["-style=file"] }
+auto-format = true
+diagnostic-severity = "hint"
+language-servers = [ "clangd" ]
+
+
+[[language]]
+name = "typst"
+auto-format = true
+language-servers = [ "tinymist" ]
+
+[language-server.tinymist]
+command = "tinymist"
+
+[language-server.tinymist.config]
+exportPdf = "onSave" # Opciones: "onSave", "onType" (tiempo real) o "never"
+
+[language-server.qmlls]
+args = ["-E"]
+command = "qmlls"
+
+
+
+[[language]]
+name = "java"
+language-servers = [ "jdtls" ]
+
+[language-server.jdtls]
+command = "java"
+args = [
+  "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+  "-Dosgi.bundles.defaultStartLevel=4",
+  "-Declipse.product=org.eclipse.jdt.ls.core.product",
+  "-Dlog.level=ALL",
+  "-noverify",
+  "-jar", "/home/pablo/.local/share/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
+  "-configuration", "/home/pablo/.local/share/jdtls/config_linux",
+  "-data", "/home/pablo/.cache/jdtls/workspace"
+]

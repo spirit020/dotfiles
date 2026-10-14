@@ -1,0 +1,96 @@
+# name: monokai_pro_modern
+# Un Monokai clásico con mapeo semántico detallado para Tree-sitter.
+
+# --- Paleta de Colores Monokai Clásica ---
+# Fondo: #272822
+# Primer Plano (Texto): #F8F8F2
+# Comentarios: #75715E
+# Rosa (Keywords, Clases): #F92672
+# Verde (Strings, Funciones): #A6E22E
+# Amarillo (Definiciones, Atributos): #E6DB74
+# Naranja (Parámetros, Constantes): #FD971F
+# Morado (Números, Booleanos, Tipos): #AE81FF
+# Cian (LSP hints, algunos operadores): #66D9EF
+
+# --- Interfaz de Usuario (UI) ---
+"ui.background" = { bg = "#272822" }
+"ui.background.separator" = { fg = "#3E3D32" }
+"ui.text" = { fg = "#F8F8F2" }
+"ui.text.focus" = { fg = "#F8F8F2", modifiers = ["bold"] }
+
+# Línea actual y selección
+"ui.cursor.match" = { fg = "#F92672", modifiers = ["bold"] }
+"ui.selection" = { bg = "#49483E" }
+"ui.cursorline.primary" = { bg = "#3E3D32" }
+
+# Barras de estado y menús
+"ui.statusline" = { fg = "#F8F8F2", bg = "#191919" }
+"ui.statusline.inactive" = { fg = "#75715E", bg = "#191919" }
+"ui.menu" = { fg = "#F8F8F2", bg = "#191919" }
+"ui.menu.selected" = { fg = "#272822", bg = "#A6E22E" }
+
+# Gutter (números de línea)
+"ui.linenumber" = { fg = "#90908A", bg = "#272822" }
+"ui.linenumber.selected" = { fg = "#F8F8F2", bg = "#3E3D32", modifiers = ["bold"] }
+
+# Cursores (usando el verde Monokai para el principal)
+"ui.cursor" = { fg = "#272822", bg = "#A6E22E" }
+"ui.cursor.secondary" = { fg = "#272822", bg = "#66D9EF" }
+"ui.cursor.insert" = { fg = "#272822", bg = "#F8F8F2" }
+
+# Diagnósticos (LSP)
+"diagnostic.error" = { fg = "#F92672", modifiers = ["underlined"] }
+"diagnostic.warning" = { fg = "#FD971F" }
+"diagnostic.info" = { fg = "#66D9EF" }
+"diagnostic.hint" = { fg = "#75715E" }
+
+# --- Resaltado de Sintaxis (Tree-sitter Moderno) ---
+
+# Palabras clave (Keywords) - Rosa Eléctrico
+"keyword" = "#F92672"
+"keyword.control" = { fg = "#F92672", modifiers = ["bold"] } # if, loops, return
+"keyword.operator" = "#F92672" # new, delete
+"keyword.storage" = "#66D9EF" # static, const, int (en C)
+
+# Funciones - Verde
+"function" = "#A6E22E"
+"function.builtin" = "#66D9EF" # Funciones nativas
+"function.macro" = "#AE81FF"   # Macros de C (#define) - Morado para destacar
+
+# Variables y Parámetros
+"variable" = "#F8F8F2"         # Color de texto normal para variables estándar
+"variable.parameter" = { fg = "#FD971F", modifiers = ["italic"] } # Parámetros de función en Naranja e Itálica
+"variable.builtin" = "#FD971F" # 'this', 'self'
+"variable.other.member" = "#F8F8F2" # Miembros de estructuras (struct.miembro)
+
+# Tipos y Clases
+"type" = "#66D9EF"             # Cian para tipos de datos
+"type.builtin" = "#66D9EF"     # int, char, float
+"type.enum.variant" = "#AE81FF" # Variantes de enum
+
+# Literales
+"string" = "#E6DB74"           # Amarillo suave para cadenas de texto
+"constant" = "#AE81FF"         # Constantes numéricas/booleanas - Morado
+"constant.numeric" = "#AE81FF"
+"constant.boolean" = "#AE81FF"
+"constant.character" = "#AE81FF"
+"constant.character.escape" = "#66D9EF"
+
+# Comentarios - Gris
+"comment" = { fg = "#75715E", modifiers = ["italic"] }
+
+# Puntuación y Operadores
+"punctuation" = "#F8F8F2"
+"punctuation.delimiter" = "#F8F8F2"
+"operator" = "#F92672"         # +, -, =, ==
+
+# Atributos (Decoradores, tags HTML)
+"attribute" = "#A6E22E"
+
+# Markup (Markdown)
+"markup.heading" = "#F92672"
+"markup.list" = "#A6E22E"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.link.url" = { fg = "#66D9EF", modifiers = ["underlined"] }
+"markup.link.text" = "#E6DB74"

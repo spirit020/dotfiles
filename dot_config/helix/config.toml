@@ -1,0 +1,47 @@
+theme = "monokai"
+
+[editor]
+line-number = "relative"
+completion-timeout = 5
+completion-replace = true
+trim-final-newlines	= true
+trim-trailing-whitespace = true
+insert-final-newline = false
+scrolloff = 4
+cursorline = true
+color-modes = true
+popup-border = "all"
+end-of-line-diagnostics = "hint"
+true-color = true # Esencial para que se mapeen bien las paletas modernas de color
+continue-comments = false
+bufferline = "multiple"
+
+[editor.inline-diagnostics]
+cursor-line = "warning" # show warnings and errors on the cursorline inline
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["diagnostics", "selections", "position", "position-percentage", "file-encoding", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+diagnostics = ["warning", "error"]
+workspace-diagnostics = ["warning", "error"]
+
+[editor.indent-guides]
+render = true
+character = "┊" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true # Muestra sutilmente en pantalla los tipos de datos deducidos

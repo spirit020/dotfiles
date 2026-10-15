@@ -1,0 +1,219 @@
+[accessibility]
+ui_scale = 1.5000000149011612
+
+[audio]
+enable_sounds = true
+
+[bar.default]
+background_opacity = 0.79999998211860657
+concave_edge_corners = false
+end = [
+    "privacy",
+    "group:g1",
+    "sysmon",
+    "clipboard",
+    "tray",
+    "notifications",
+    "network",
+    "bluetooth",
+    "volume",
+    "brightness",
+    "battery",
+    "control-center",
+    "session"
+]
+font_weight = 400
+margin_edge = 10
+margin_ends = 10
+panel_overlap = 0
+radius = 10
+scale = 1.5000000149011612
+shadow = false
+start = [ "launcher", "wallpaper", "workspaces", "active_window", "media" ]
+thickness = 40
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "temp", "cpu" ]
+    opacity = 0.40000000596046448
+    padding = 8.0
+
+[brightness]
+sync_all_monitors = true
+
+[calendar]
+enabled = true
+
+[control_center]
+width = 1200
+
+    [control_center.calendar]
+    show_week_numbers = true
+
+[desktop_widgets]
+enabled = false
+
+[idle]
+behavior_order = [ "screen-off", "lock", "lock-and-suspend" ]
+pre_action_fade_seconds = 10
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 300.0
+
+[location]
+address = "Madrid"
+
+[lockscreen]
+monitors = [ "HDMI-A-2" ]
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@HDMI-A-2", "lockscreen-login-box@HDMI-A-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 898.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-2"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 1280.0
+    cy = 1258.0
+    output = "HDMI-A-2"
+    placement_height = 1440.0
+    placement_width = 2560.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-2".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+[nightlight]
+enabled = true
+temperature_night = 3800
+
+[shell]
+clipboard_enabled = false
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = true
+
+    [shell.panel]
+    transparency_mode = "glass"
+
+    [shell.screenshot]
+    confirm_region = true
+
+    [shell.window_switcher]
+    mru = true
+
+[system.monitor]
+cpu_temp_activity_threshold = 50
+cpu_temp_critical_threshold = 75
+gpu_temp_activity_threshold = 50
+gpu_temp_critical_threshold = 80
+
+[theme]
+builtin = "Noctalia"
+mode = "auto"
+pure_black_dark = true
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    enable_builtin_templates = false
+
+[wallpaper]
+transition_duration = 4000
+
+    [wallpaper.default]
+    path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+
+    [wallpaper.last]
+    path = "/usr/share/noctalia/assets/noctalia-wallpaper.png"
+
+[widget.clock]
+format = "{:%A, %-d de %B (%-m) de %Y - %H:%M:%S %Z (UTC%z)}"
+scale = 1.2
+
+[widget.cpu]
+show_glyph = false
+visualization = "none"
+
+[widget.media]
+hide_when_no_media = true
+show_progress = true
+
+[widget.sysmon]
+show_glyph = false
+stat = "ram_used"
+
+[widget.temp]
+show_glyph = false
+visualization = "none"
+
+[widget.workspaces]
+active_pill_size = 1.5
+font_weight = 700
+hide_when_empty = true
+labels_only_when_occupied = true
+max_label_chars = 2
+show_all_outputs = true

@@ -36,7 +36,7 @@ edit = [
 	{ run = "code -w %s",       desc = "code (block)", for = "windows", block = true },
 ]
 play = [
-	{ run = "mpv --force-window --fullscreen %s", desc = "Play", for = "unix", orphan = true},
+	{ run = "mpv --force-window %s", desc = "Play", for = "unix", orphan = true},
 	{ run = "xdg-open %s1",    desc = "Play", for = "linux", orphan = true },
 	{ run = "open %s",         desc = "Play", for = "macos" },
 	{ run = 'start "" %s1',    desc = "Play", for = "windows", orphan = true },
@@ -45,10 +45,10 @@ play = [
 	{ run = "mediainfo %s1 & pause", block = true, desc = "Show media info", for = "windows" },
 ]
 pdff = [
-	{ run = 'evince -f "$@"', desc = "evince", orphan = true, for = "unix" },
+	{ run = "evince -f %s", desc = "evince", orphan = true, for = "unix" },
 ]
-ver_imagen = [
-    { run = 'swayimg "$@"', block = false, desc = "Ver imagen con swayimg" }
+images = [
+    { run = "swayimg %s", block = false, desc = "View images with swayimg" }
 ]
 open = [
 	{ run = "xdg-open %s1",    desc = "Open", for = "linux" },
@@ -83,7 +83,7 @@ rules = [
 	{ mime = "text/*", use = [ "edit", "reveal" ] },
 	# Image
 	# { mime = "image/*", use = [ "open", "reveal" ] },
-	{ mime = "image/*", use = "ver_imagen" },
+	{ mime = "image/*", use = "images" },
 	# Media
 	{ mime = "{audio,video}/*", use = [ "play", "reveal" ] },
 	# Code

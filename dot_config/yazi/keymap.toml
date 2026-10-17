@@ -74,7 +74,7 @@ keymap = [
 	{ on = "<C-->",     run = "hardlink",                    desc = "Hardlink yanked files" },
 	{ on = "Y",         run = "unyank",                      desc = "Cancel the yank status" },
 	{ on = "X",         run = "unyank",                      desc = "Cancel the yank status" },
-	{ on = "d",         run = "remove",                      desc = "Trash selected files" },
+	# { on = "d",         run = "remove",                      desc = "Trash selected files" },
 	{ on = "D",         run = "remove --permanently",        desc = "Permanently delete selected files" },
 	{ on = "a",         run = "create",                      desc = "Create a file (ends with / for directories)" },
 	{ on = "A",         run = "bulk_create",                 desc = "Bulk create files" },
@@ -85,8 +85,8 @@ keymap = [
 	{ on = "s",         run = "search --via=fd",             desc = "Search files by name via fd" },
 	{ on = "S",         run = "search --via=rg",             desc = "Search files by content via ripgrep" },
 	{ on = "<C-s>",     run = "escape --search",             desc = "Cancel the ongoing search" },
-	{ on = "z",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
-	{ on = "Z",         run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
+	{ on = "Z",         run = "plugin fzf",                  desc = "Jump to a file/directory via fzf" },
+	{ on = "z",         run = "plugin zoxide",               desc = "Jump to a directory via zoxide" },
 
 	# Linemode
 	{ on = [ "m", "s" ], run = "linemode size",        desc = "Linemode: size" },
@@ -131,7 +131,7 @@ keymap = [
 	# Goto
 	{ on = [ "g", "h" ],       run = "cd ~",             desc = "Go home" },
 	{ on = [ "g", "c" ],       run = "cd ~/.config",     desc = "Go to ~/.config" },
-	{ on = [ "g", "d" ],       run = "cd ~/Downloads",   desc = "Go to ~/Downloads" },
+	{ on = [ "g", "d" ],       run = "cd ~/Archivos/Descargas",   desc = "Go to ~/Archivos/Descargas" },
 	{ on = [ "g", "t" ],       run = "plugin trash",     desc = "Go to trash bin" },
 	{ on = [ "g", "<Space>" ], run = "cd --interactive", desc = "Jump interactively" },
 	{ on = [ "g", "f" ],       run = "follow",           desc = "Follow hovered symlink" },
@@ -393,3 +393,10 @@ on = "ñ"
 for = "unix"
 run = 'shell "$SHELL" --block'
 desc = "Open $SHELL here"
+
+# If you also using Yazi on Windows:
+[[mgr.prepend_keymap]]
+on   = "ñ"
+for  = "windows"
+run  = 'shell "powershell.exe" --block'
+desc = "Open PowerShell here"

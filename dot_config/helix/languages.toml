@@ -35,19 +35,11 @@ command = "qmlls"
 
 
 
+[language-server.jdtls]
+command = "jdtls"
+
 [[language]]
 name = "java"
-language-servers = [ "jdtls" ]
-
-[language-server.jdtls]
-command = "java"
-args = [
-  "-Declipse.application=org.eclipse.jdt.ls.core.id1",
-  "-Dosgi.bundles.defaultStartLevel=4",
-  "-Declipse.product=org.eclipse.jdt.ls.core.product",
-  "-Dlog.level=ALL",
-  "-noverify",
-  "-jar", "/home/pablo/.local/share/jdtls/plugins/org.eclipse.equinox.launcher_1.6.400.v20210924-0641.jar",
-  "-configuration", "/home/pablo/.local/share/jdtls/config_linux",
-  "-data", "/home/pablo/.cache/jdtls/workspace"
-]
+language-servers = ["jdtls"]
+file-types = ["java"]
+roots = [".project", ".classpath", "pom.xml", "build.gradle", ".git"]

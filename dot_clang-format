@@ -1,0 +1,29 @@
+BasedOnStyle: LLVM
+BreakBeforeBraces: Allman
+
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+
+IncludeBlocks: Regroup
+
+SeparateDefinitionBlocks: Always
+
+BinPackArguments: true
+BinPackParameters: true
+
+ColumnLimit: 118
+
+# --- ALINEACIÓN DE PUNTEROS Y REFERENCIAS ---
+# 'Left' hace que se peguen al tipo de dato (int* x, bool& y)
+PointerAlignment: Middle
+
+# Definición de prioridades (Números más bajos van ARRIBA)
+IncludeCategories:
+  # 1. Los headers que tienen < > (Librería estándar, del sistema, etc.)
+  - Regex:    '^<.*>'
+    Priority: 1
+
+  # 2. Los headers que tienen " " (Tus propios archivos locales)
+  - Regex:    '^".*"'
+    Priority: 2

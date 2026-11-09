@@ -29,6 +29,7 @@ command = "tinymist"
 [language-server.tinymist.config]
 exportPdf = "onSave" # Opciones: "onSave", "onType" (tiempo real) o "never"
 
+
 [language-server.qmlls]
 args = ["-E"]
 command = "qmlls"
@@ -38,8 +39,14 @@ command = "qmlls"
 [language-server.jdtls]
 command = "jdtls"
 
+[language-server.jdtls.config.settings.java]
+home = "/usr/lib/jvm/openjdk21"
+eclipse.downloadSources = true
+maven.downloadSources = true
+
 [[language]]
 name = "java"
-language-servers = ["jdtls"]
+scope = "source.java"
 file-types = ["java"]
-roots = [".project", ".classpath", "pom.xml", "build.gradle", ".git"]
+roots = ["pom.xml", "build.gradle", ".project", ".classpath", ".git"]
+language-servers = ["jdtls"]
